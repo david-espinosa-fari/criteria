@@ -1,6 +1,6 @@
 # criteria
 find by criteria in any table
-This module is responsible for building complex conditionals that will later be translated to perform a database query, at the moment there is only support for sql but translations for mongodb, elastick, toolbox, etc. could be included.
+This module is responsible for building complex conditionals that will later be translated to perform a database query, at the moment there is only support for sql but translations for mongodb, elastick, etc. could be included.
 Advantages: 
 
 low learning curve
