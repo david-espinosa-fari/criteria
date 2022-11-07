@@ -26,25 +26,24 @@ General flow
 
 Create a criteria instance.
 
-$criteria = Criteria::create();
+    $criteria = Criteria::create();
 
 Added comparisions trough public methods where, andWhere,  orWhere
 
-$criteria->where(new Comparision('fieldNameFromDataBase', Operator::EQ, $backupfileId));
-$criteria->andWhere(new Comparision('serviceId', Operator::EQ,$serviceId));
-$criteria->orWhere(new Comparision('otherFieldName', Operator::GT,'someValue'));
-$criteria->updateLimitAndOffset(100, 2);
-$criteria->addOrderBy('serviceId', Order::ASC);
+    $criteria->where(new Comparision('fieldNameFromDataBase', Operator::EQ, $backupfileId));
+    $criteria->andWhere(new Comparision('serviceId', Operator::EQ,$serviceId));
+    $criteria->orWhere(new Comparision('otherFieldName', Operator::GT,'someValue'));
+    $criteria->updateLimitAndOffset(100, 2);
+    $criteria->addOrderBy('serviceId', Order::ASC);
 On infrastructure inject the expresion builder. Something that implement IStringConditionExpressions $expresionBuilder,  like SqlExpressionBuilder
 
-function __construct(IStringConditionExpressions $expresionBuilder)
+    function __construct(IStringConditionExpressions $expresionBuilder)
 
 create a method that accept the criteria as argument and invoke them. Example.
-
-
+    
     public function findByCriteria(Criteria $criteria): List
-    {
-        $sql = 'SELECT * FROM yourSuperTable '.$this->expresionBuilder->createStringConditionExpression($criteria);
+        {
+            $sql = 'SELECT * FROM yourSuperTable '.$this->expresionBuilder->createStringConditionExpression($criteria);
 
 Supported comparisions operators
 
@@ -65,19 +64,20 @@ Supported orderings
     
 How to use it
 
-  $criteria = Criteria::create();
-  $criteria->where(new Comparision('fieldNameFromDataBase', Operator::LT, $backupfileId));
-  $criteria->andWhere(new Comparision('otherField1', Operator::EQ, $serviceId));
-  $criteria->orWhere(new Comparision('serviceId', Operator::GT, 'someValue'));
-  $criteria->andWhere(new Comparision('otherField2', Operator::NEQ, $serviceId));
-  $criteria->updateLimitAndOffset(100, 2);
-  $criteria->addOrderBy('serviceId', Order::ASC);
-findByCriteria(Criteria $criteria)
+
+    $criteria = Criteria::create();
+    $criteria->where(new Comparision('fieldNameFromDataBase', Operator::LT, $backupfileId));
+    $criteria->andWhere(new Comparision('otherField1', Operator::EQ, $serviceId));
+    $criteria->orWhere(new Comparision('serviceId', Operator::GT, 'someValue'));
+    $criteria->andWhere(new Comparision('otherField2', Operator::NEQ, $serviceId));
+    $criteria->updateLimitAndOffset(100, 2);
+    $criteria->addOrderBy('serviceId', Order::ASC); 
+    findByCriteria(Criteria $criteria)
 
 Test
 
-phpunit --group SearchCriteria
-phpunit test/Shared/SearchCriteria/
+    phpunit --group SearchCriteria
+    phpunit test/Shared/SearchCriteria/
 
 Currently Out of scope
 Support for other tecnologyes like Mongodb, ElasticSearch, etc.
