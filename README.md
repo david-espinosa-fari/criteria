@@ -7,7 +7,7 @@ low learning curve
 
 Reduces the number of functions like findByName, findByLastname, findByAgeWhitName, etc.
 
-Knowledge of the specific language to be translated into is not required to obtain records. For example, you do not need to know SQL to perform a complex query, such as (((A = X and B >= X) OR C < X) AND D like %X% )
+Knowledge of the specific language to be translated into is not required to obtain records. For example, you do not need to know SQL to perform a complex query, such as *(((A = X and B >= X) OR C < X) AND D like %X% )*
 
 It is agnostic to the technology to which it will be translated.
 
