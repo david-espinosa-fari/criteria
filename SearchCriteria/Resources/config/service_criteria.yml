@@ -1,0 +1,5 @@
+services:
+    gpm.sql_expression_builder:
+        class: GPM\Shared\SearchCriteria\Infraestructure\SqlExpressionBuilder
+        arguments:
+            []
