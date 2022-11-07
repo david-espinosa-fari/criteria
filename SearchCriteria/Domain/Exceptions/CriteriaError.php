@@ -1,7 +1,7 @@
 <?php
 
 
-namespace GPM\Shared\SearchCriteria\Domain\Exceptions;
+namespace Shared\SearchCriteria\Domain\Exceptions;
 
 
 use Exception;
