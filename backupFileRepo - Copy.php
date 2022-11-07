@@ -1,8 +1,5 @@
 <?php
 
-
-namespace MonitoringServiceBundle\Infrastructure;
-
 use Shared\SearchCriteria\Domain\Comparision;
 use Shared\SearchCriteria\Domain\Criteria;
 use Shared\SearchCriteria\Domain\Exceptions\CriteriaError;
