@@ -1,9 +1,9 @@
 <?php
 
-namespace Tests\GPM\Shared\SearchCriteria\Infraestructure\SqlExpressionBuilder;
+namespace Tests\Shared\SearchCriteria\Infraestructure\SqlExpressionBuilder;
 
 
-use GPM\Shared\SearchCriteria\Infraestructure\SqlExpressionBuilder;
+use Shared\SearchCriteria\Infraestructure\SqlExpressionBuilder;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Tests\Shared\ReflectClassUtility;
 
@@ -26,7 +26,7 @@ abstract class SqlExpressionBuilderTest extends KernelTestCase
     {
         self::bootKernel();
         self::$container = self::$kernel->getContainer();
-        $sqlExpressionBuilder = self::$container->get('gpm.sql_expression_builder');
+        $sqlExpressionBuilder = self::$container->get('sql_expression_builder');
 
         $this->assertInstanceOf(SqlExpressionBuilder::class, $sqlExpressionBuilder);
 
